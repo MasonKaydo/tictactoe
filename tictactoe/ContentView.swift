@@ -12,7 +12,6 @@ struct ContentView: View {
     @State private var xturn = true
     @State var gameOver = false
     @State var winMessage = ""
-    
     var body: some View {
         VStack {
             Text("Tic Tac Toe")
@@ -65,12 +64,12 @@ struct ContentView: View {
         checkLine(a: 2, b: 5, c: 8)
         checkLine(a: 0, b: 4, c: 8)
         checkLine(a: 2, b: 4, c: 6)
-        
         if !(gameOver || moves.contains("")) {
                   winMessage = "Cat's Game"
                   gameOver = true
               }
     }
+    
     private func checkLine(a: Int , b: Int, c: Int){
         if moves[a] != "" && moves[a] == moves[b] && moves[b] == moves[c] {
             winMessage = "\(moves[a]) is the Winner"
